@@ -1,0 +1,41 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-movie-hdr {
+  text-align: center;
+  font-family: ubuntu;
+  margin-top: 2%;
+}
+
+.new-font-style {
+  font-size: 20px;
+}
+
+#movie_title, 
+#movie_director, 
+#movie_runtime_in_minutes, 
+#movie_poster_image_url,
+#movie_release_date, 
+#movie_description {
+  border-radius: 5px;
+  width: 75%;
+}
+
+#movie_release_date {
+  text-align: center;
+}
+
+#movie_description {
+  height: 250px;
+}
+
+#new-submit {
+  margin-top: 3%;
+  width: 400px;
+}
+
+.new-movie-choose-file {
+  margin-left: 12.5%;
+  margin-top: 3%;
+}

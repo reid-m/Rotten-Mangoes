@@ -1,0 +1,155 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+/*>>>>> styling for the INDEX page <<<<<*/
+
+#submit {
+  float: right;
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
+
+#rotten-mangoes-hdr {
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  font-family: Ubuntu;
+  font-size: 3.5em;
+}
+
+.movie-title, .release-date, .director {
+  text-align: center;
+}
+
+.movie-title {
+  font-size: 30px;
+}
+
+ .movie-img {
+  box-shadow: 10px 10px 20px grey;
+}
+
+.description {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  font-size: 18px;
+  text-indent: 5%;
+}
+
+.desc-movie {
+  height :600px ;
+}
+
+/*>>>>> styling for pages with a form <<<<<*/
+
+.form-style {
+  text-align: center;
+  margin-top: 5%;
+  font-family: ubuntu;
+}
+
+.form-style div input{
+  width: 300px;
+}
+
+/*>>>>> styling for new movie page <<<<<*/
+
+/*.new-movie-hdr {
+  text-align: center;
+  font-family: ubuntu;
+  margin-top: 2%;
+}
+
+.new-font-style {
+  font-size: 20px;
+}
+
+#movie_title, 
+#movie_director, 
+#movie_runtime_in_minutes, 
+#movie_poster_image_url,
+#movie_release_date, 
+#movie_description {
+  border-radius: 5px;
+  width: 75%;
+}
+
+#movie_release_date {
+  text-align: center;
+}
+
+#movie_description {
+  height: 250px;
+}
+
+#new-submit {
+  margin-top: 3%;
+  width: 400px;
+}*/
+
+
+
+/*>>>>> styling for show movies page <<<<<*/
+
+.review-hdr {
+  text-align: center;
+  margin-top: 1%;
+}
+
+.review {
+  text-align: center;
+}
+
+.show-return-btn {
+  float: right;
+  margin-right: 10%;
+  margin-top: 1%;
+}
+
+/*>>>>> styling for new users form <<<<<*/
+
+.new-user-hdr {
+  text-align: center;
+  font-family: ubuntu;
+  margin-top: 5%;
+}
+
+.new-user-form div input{
+  width: 300px;
+}
+
+.form-style {
+  font-size: 20px;
+}
+
+#user_email, #user_firstname, #user_lastname, #user_password, #user_password_confirmation {
+  border-radius: 5px;
+}
+
+#signup-submit-button {
+  /*margin-top: 5%;*/
+}
+
+
+
+
+
+
+
+
+
+
+
