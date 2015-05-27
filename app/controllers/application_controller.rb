@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def restrict_access_admin
+    if !current_user.admin
+      flash[:alert] = 'Access Denied'
+      redirect_to root_path
+    end
+  end
+
   def restrict_access
     if !current_user
       flash[:alert] = 'You must log in.'
