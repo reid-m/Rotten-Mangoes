@@ -38,7 +38,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Image Uploader
 
 gem 'carrierwave'
+
 gem 'tux'
+
+gem 'kaminari'
 
 # Use unicorn as the app server
 # gem 'unicorn'
