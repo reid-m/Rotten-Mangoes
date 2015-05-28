@@ -148,6 +148,37 @@
   font-size: 24px;
 }
 
+/*>>>>> styling for the search bar <<<<<*/
+
+.search-bar {
+  float: right;
+  margin-top: 3%;
+  margin-right: 2%;
+}
+
+#search-input {
+  width: 30em;
+  height:2.4em;
+  margin-bottom: 5%;
+  border-radius: 5px;
+}
+
+#search-btn {
+  width: 10em;
+  height: 2em;
+  margin-bottom: .3%;
+}
+
+#search-bar {
+  width: 25em;
+  height: 2em;
+  border-radius: 5px;
+}
+
+.search-form {
+  float: right;
+}
+
 
 
 

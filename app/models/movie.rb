@@ -22,6 +22,11 @@ class Movie < ActiveRecord::Base
     reviews.sum(:rating_out_of_ten)/reviews.size >= 1
   end
 
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("title like ?", "%#{query}%") 
+  end
+
   protected
 
   def release_date_is_in_the_future

@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RottenMangoes</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <head>
+    <title>RottenMangoes</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
-  
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <% flash.each do |key, value| %>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="search-form">
+     <!-- When submit the form, the view rendered will be the index view of our articles resource -->
+     <%= form_tag(movies_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+     <div class="input-append">
+      <%= text_field_tag :search, params[:search], class: "span2", id: "search-bar", placeholder: "Search" %>
+
+      <%# form_for @movie do |f| %>
+        <%#= f.text_field :movie %>
+        <%#= f.select :runtime_in_minutes, [['90 mins or less',' 90 mins or less'],['90 to 120 mins','90 to 120 mins'],['120  mins or more','120 mins or more']] %>
+        <%#= f.submit %>
+      <%# end %>
+
+      <button class="btn btn-primary" id="search-btn" type="submit">Search</button>
+      </div>
+      <% end %>
+      
+    </div>
+
+    <% flash.each do |key, value| %>
     <% content_tag(:div, value) %>
-  <% end %>
+    <% end %>
     <div class="container">
       <%= yield %>
     </div>
-  <%= render 'layouts/footer' %>
-</body>
+    <%= render 'layouts/footer' %>
+  </body>
 </html>
