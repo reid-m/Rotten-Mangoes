@@ -4,7 +4,7 @@
   <% @movies.each do |movie| %>
   <div class= "col-sm-4">
     <%= image_tag movie.image, :class => "movie-img img-responsive" %>
-    <%= link_to image_tag(movie.poster_image_url, :class => "movie-img img-responsive"), movie_path(movie) %>
+    <%#= link_to image_tag(movie.poster_image_url, :class => "movie-img img-responsive"), movie_path(movie) %>
   </div>
   <div class= "col-sm-8 desc-movie">
     <h2 class="movie-title"><%= link_to movie.title, movie_path(movie) %></h2>
