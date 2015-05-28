@@ -18,6 +18,7 @@ class Admin::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      UserMailer.welcome_email(@user).deliver
       redirect_to admin_users_path, notice: "Welcome aboard, #{@user.firstname}!"
     else
       render :new

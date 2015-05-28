@@ -77,4 +77,16 @@ RottenMangoes::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.delivery_method =:smtp
+
+  ActionMailer::Base.smtp_settings = {
+  :address              => "smtp.mailgun.org"
+  :port                 => 587,
+  :domain               => "sandbox1d6a58ec67ef42daa3bfd99f217fe7b6.mailgun.org",
+  :user_name            => "postmaster@sandbox1d6a58ec67ef42daa3bfd99f217fe7b6.mailgun.org",
+  :password             => "995b7c92dc0f9c71a8fc1aa852a724f3",
+  :authentication       => "plain",
+}
+
 end
