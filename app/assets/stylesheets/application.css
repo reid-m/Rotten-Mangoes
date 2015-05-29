@@ -27,18 +27,23 @@
   margin-top: 5%;
   font-family: Ubuntu;
   font-size: 3.5em;
+  color: whitesmoke;
 }
 
-.movie-title, .release-date, .director {
+.movie-title, 
+.release-date, 
+.director {
   text-align: center;
+  color: whitesmoke;
 }
 
 .movie-title {
   font-size: 30px;
+  color: whitesmoke;
 }
 
  .movie-img {
-  box-shadow: 10px 10px 20px grey;
+  /*box-shadow: 10px 10px 20px grey;*/
 }
 
 .description {
@@ -47,6 +52,7 @@
   margin-top: 2%;
   font-size: 18px;
   text-indent: 5%;
+  color: whitesmoke;
 }
 
 .desc-movie {
@@ -135,7 +141,11 @@
   font-size: 20px;
 }
 
-#user_email, #user_firstname, #user_lastname, #user_password, #user_password_confirmation {
+#user_email, 
+#user_firstname, 
+#user_lastname, 
+#user_password, 
+#user_password_confirmation {
   border-radius: 5px;
 }
 
@@ -183,8 +193,54 @@
   text-align: center;
   font-size: 24px;
   margin-bottom: 3%;
-
 }
+
+/*>>>>> styling for the web app's background images <<<<<*/
+
+html {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+body{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  min-height: 100%;
+  min-width: 100%;
+  background-attachment: fixed;
+}
+
+body.index {
+  background-image: url("/images/index-image.jpg");
+}
+
+body.show {
+  background-image: url("/images/show-image.jpg");
+}
+
+/*>>>>> styling for the show page <<<<<*/
+
+#show-delete-btn {
+  margin-left: 1%;
+}
+
+#show-edit-btn {
+  margin-left: 5%;
+}
+
+.session-new-login {
+  text-align: center;
+  color: whitesmoke;
+  font-family: ubuntu;
+  font-size: 1.5em;
+}
+
+.session-new-login div input{
+  width: 300px;
+  border-radius: 5px;
+}
+
 
 
 

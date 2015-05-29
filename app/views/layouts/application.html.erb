@@ -13,7 +13,7 @@
     
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body class="<%= @body_class %>">
     <div class="search-form">
      <!-- When submit the form, the view rendered will be the index view of our articles resource -->
      <%= form_tag(movies_path, :method => "get", class: "navbar-form", id: "search-form") do %>

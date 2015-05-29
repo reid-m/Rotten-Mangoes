@@ -1,3 +1,4 @@
+<% @body_class = "show" %>
 <h1 id="rotten-mangoes-hdr">Rotten Mangoes</h1>
 <div class="row">
   <div class="col-sm-4">
@@ -5,7 +6,7 @@
     <%#= link_to image_tag(@movie.poster_image_url, :class => "movie-img img-responsive"), movie_path(@movie) %>
   </div>
   <div class="col-sm-8">
-  <h2 class="movie-title"><%= @movie.title %> (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, confirm: "You sure?" %>)</h2>
+  <h2 class="movie-title"><%= @movie.title %> <%= link_to "Edit", edit_movie_path(@movie), class: "btn btn-primary", id: "show-edit-btn" %><%= link_to "Delete", movie_path(@movie), class: "btn btn-primary", id: "show-delete-btn", method: :delete, confirm: "You sure?" %></h2>
   <h3 class="release-date">Release Date: <%= formatted_date(@movie.release_date) %></h3>
   <h4 class="director">Dir. <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</h4>
   <p class="description"><%= @movie.description %></p>
