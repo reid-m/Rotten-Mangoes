@@ -1,17 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
-
 
 /*>>>>> styling for the INDEX page <<<<<*/
 
@@ -63,12 +49,18 @@
 
 .form-style {
   text-align: center;
-  margin-top: 5%;
+  margin-top: .5%;
   font-family: ubuntu;
+  color: whitesmoke;
 }
 
 .form-style div input{
   width: 300px;
+  color: black;
+}
+
+#signup-submit-btn {
+  margin-top: 1%;
 }
 
 /*>>>>> styling for show movies page <<<<<*/
@@ -76,16 +68,27 @@
 .review-hdr {
   text-align: center;
   margin-top: 1%;
+  color: whitesmoke;
 }
 
-.review {
+.review-msg {
   text-align: center;
+  font-size: 1.2em;
 }
 
-.show-return-btn {
+.review-username {
+  color: whitesmoke;
+}
+
+/*.show-return-btn {
   float: right;
   margin-right: 10%;
   margin-top: 1%;
+}*/
+
+#login-msg {
+  color: whitesmoke;
+  text-align: center;
 }
 
 /*>>>>> styling for new users form <<<<<*/
@@ -93,7 +96,8 @@
 .new-user-hdr {
   text-align: center;
   font-family: ubuntu;
-  margin-top: 5%;
+  margin-top: 3%;
+  color: whitesmoke;
 }
 
 .new-user-form div input{
@@ -112,10 +116,6 @@
   border-radius: 5px;
 }
 
-#signup-submit-button {
-  /*margin-top: 5%;*/
-}
-
 .admin-list-users {
   text-align: center;
   font-size: 24px;
@@ -123,11 +123,11 @@
 
 /*>>>>> styling for the search bar <<<<<*/
 
-.admin-create-user {
+/*.admin-create-user {
   text-align: center;
   font-size: 24px;
   margin-bottom: 3%;
-}
+}*/
 
 /*>>>>> styling for the web app's background images <<<<<*/
 
@@ -145,16 +145,14 @@ body{
   background-attachment: fixed;
 }
 
-body.index {
-  background-image: url("/images/index-image.jpg");
+body.index, body.show {
+  background-image: url("/images/movie-curtains-background.jpg")
 }
 
-body.show {
-  background-image: url("/images/show-image.jpg");
-}
-
-body.session-new, body.edit {
-  background-image: url("/images/director-chair.jpg");
+body.session-new, 
+body.edit,
+body.user-new {
+  background-image: url("/images/movie-set.jpg");
 }
 
 body.admin {
@@ -172,23 +170,40 @@ body.admin {
   margin-left: 5%;
 }
 
-#back-to-index {
-  margin-right: 30%;
+.show-return-btn {
+  float: right;
+  margin-right: 27.5%;
 }
 
 .session-new-login {
   text-align: center;
   color: whitesmoke;
   font-family: ubuntu;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .session-new-login div input{
   width: 300px;
   border-radius: 5px;
-  opacity: 0.5;
   color: black;
 }
+
+#login-btn {
+  margin-top: 2%;
+  color: whitesmoke;
+}
+
+p {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.review-txt, 
+.review-rating {
+  font-size: 1.2em;
+}
+
+/*>>>>> styling for the navbar <<<<<*/
 
 .navbar-hdr {
   color: whitesmoke;

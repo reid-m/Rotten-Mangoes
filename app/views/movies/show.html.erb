@@ -9,21 +9,20 @@
     <h2 class="movie-title"><%= @movie.title %> <%= link_to "Edit", edit_movie_path(@movie), class: "btn btn-primary", id: "show-edit-btn" %><%= link_to "Delete", movie_path(@movie), class: "btn btn-primary", id: "show-delete-btn", method: :delete, confirm: "You sure?" %></h2>
     <h3 class="release-date">Release Date: <%= formatted_date(@movie.release_date) %></h3>
     <h4 class="director">Dir. <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</h4>
-    <p class="description"><%= @movie.description %></p>
-    <div class="show-return-btn">
-      <%= link_to "Back to all movies", movies_path, class: "btn btn-primary", id:"back-to-index" %><br/>
-    </div> 
+    <p class="description"><%= @movie.description %></p> 
   </div>
 
 
   <h3 class="review-hdr">Reviews of <em><%= @movie.title %></em></h3>
   <% if current_user %>
   <% @movie.reviews.each do |review| %>
-  <p><%= review.text %></p>
-  <p><%= review.rating_out_of_ten %>/10</p>
-  <small>- <%= review.user.full_name %></small><br/>
+  <p class="review-txt"><%= review.text %><small>- <%= review.user.full_name %></small></p>
+  <p class="review-rating">Rating: <%= review.rating_out_of_ten %>/10</p>
   <% end %>
-  <p class="review"><%= link_to "Write a review!", new_movie_review_path(@movie) %></p>
+  <p class="review-msg"><%= link_to "Write a review!", new_movie_review_path(@movie) %></p>
   <% else %>
-  <p class="login">Please <%= link_to "log in", new_session_path %> to see reviews and add your own.</p> 
+  <p class="login" id="login-msg" >Please <%= link_to "log in", new_session_path %> to see reviews and add your own.</p> 
   <% end %>
+  <div class="show-return-btn">
+    <%= link_to "Back to all movies", movies_path, class: "btn btn-primary", id:"back-to-index" %>
+  </div>
