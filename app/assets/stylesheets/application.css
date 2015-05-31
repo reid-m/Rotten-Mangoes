@@ -43,7 +43,7 @@
 }
 
  .movie-img {
-  /*box-shadow: 10px 10px 20px grey;*/
+  margin-top: 10%;
 }
 
 .description {
@@ -70,43 +70,6 @@
 .form-style div input{
   width: 300px;
 }
-
-/*>>>>> styling for new movie page <<<<<*/
-
-/*.new-movie-hdr {
-  text-align: center;
-  font-family: ubuntu;
-  margin-top: 2%;
-}
-
-.new-font-style {
-  font-size: 20px;
-}
-
-#movie_title, 
-#movie_director, 
-#movie_runtime_in_minutes, 
-#movie_poster_image_url,
-#movie_release_date, 
-#movie_description {
-  border-radius: 5px;
-  width: 75%;
-}
-
-#movie_release_date {
-  text-align: center;
-}
-
-#movie_description {
-  height: 250px;
-}
-
-#new-submit {
-  margin-top: 3%;
-  width: 400px;
-}*/
-
-
 
 /*>>>>> styling for show movies page <<<<<*/
 
@@ -160,35 +123,6 @@
 
 /*>>>>> styling for the search bar <<<<<*/
 
-.search-bar {
-  float: right;
-  margin-top: 3%;
-  margin-right: 2%;
-}
-
-#search-input {
-  width: 30em;
-  height:2.4em;
-  margin-bottom: 5%;
-  border-radius: 5px;
-}
-
-#search-btn {
-  width: 10em;
-  height: 2em;
-  margin-bottom: .3%;
-}
-
-#search-bar {
-  width: 25em;
-  height: 2em;
-  border-radius: 5px;
-}
-
-.search-form {
-  float: right;
-}
-
 .admin-create-user {
   text-align: center;
   font-size: 24px;
@@ -219,6 +153,15 @@ body.show {
   background-image: url("/images/show-image.jpg");
 }
 
+body.session-new, body.edit {
+  background-image: url("/images/director-chair.jpg");
+}
+
+body.admin {
+  background-color: grey;
+}
+
+
 /*>>>>> styling for the show page <<<<<*/
 
 #show-delete-btn {
@@ -227,6 +170,10 @@ body.show {
 
 #show-edit-btn {
   margin-left: 5%;
+}
+
+#back-to-index {
+  margin-right: 30%;
 }
 
 .session-new-login {
@@ -239,8 +186,45 @@ body.show {
 .session-new-login div input{
   width: 300px;
   border-radius: 5px;
+  opacity: 0.5;
+  color: black;
 }
 
+.navbar-hdr {
+  color: whitesmoke;
+  font-family: ubuntu;
+}
+
+#welcome-msg {
+  margin-left: 2%;
+  font-size: 15px;
+}
+
+h1 a {
+  float: right;
+}
+
+#rtn-mngs-hdr {
+  font-size: 30px;
+  font-family: ubuntu;
+  color: royalblue;
+}
+
+#login-out-btn,
+#signup-btn, 
+#admin-btn {
+  margin-top: 5.5%;
+}
+
+.search-input {
+  border-radius: 5px;
+  height: 2.5em;
+  width: 25em;
+}
+
+#search-btn {
+  margin-top: .65%;
+}
 
 
 

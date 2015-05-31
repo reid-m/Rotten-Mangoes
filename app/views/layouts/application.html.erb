@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RottenMangoes</title>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<head>
+  <title>RottenMangoes</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
-    
-    <%= csrf_meta_tags %>
-  </head>
-  <body class="<%= @body_class %>">
-    <div class="search-form">
-     <!-- When submit the form, the view rendered will be the index view of our articles resource -->
-     <%= form_tag(movies_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-     <div class="input-append">
-      <%= text_field_tag :search, params[:search], class: "span2", id: "search-bar", placeholder: "Search" %>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
 
-      <%# form_for @movie do |f| %>
-        <%#= f.text_field :movie %>
-        <%#= f.select :runtime_in_minutes, [['90 mins or less',' 90 mins or less'],['90 to 120 mins','90 to 120 mins'],['120  mins or more','120 mins or more']] %>
-        <%#= f.submit %>
-      <%# end %>
+  <%= csrf_meta_tags %>
+</head>
 
-      <button class="btn btn-primary" id="search-btn" type="submit">Search</button>
+<body class="<%= @body_class %>">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand", id="rtn-mngs-hdr" >Rotten Mangoes</a>
       </div>
-      <% end %>
-      
-    </div>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <!-- <input type="text" class="form-control" placeholder="Search"> -->
+          <%= form_tag(movies_path, :method => "get") do %>
+          <%= text_field_tag :search, params[:search], class:"search-input" %>
+          <% end %>
+        </div>
+        <button type="submit" class="btn btn-primary", id="search-btn" >Search</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+           <%= link_to "Log out", session_path("current"), class:"btn btn-primary", id:"login-out-btn", method: :delete %>
+         <%= link_to "Admin", admin_users_path, class: "btn btn-primary", id:"admin-btn" %>
+         <% else %>
+          <%= link_to "Log In", new_session_path, class: "btn btn-primary", id:"login-out-btn" %>
+          <%= link_to "Sign Up", new_user_path, class: "btn btn-primary", id:"signup-btn" %>
+     </li>
+   </ul>
 
-    <% flash.each do |key, value| %>
+   <% flash.each do |key, value| %>
     <% content_tag(:div, value) %>
     <% end %>
-    <div class="container">
-      <%= yield %>
-    </div>
-    <%= render 'layouts/footer' %>
-  </body>
+
+   <% end %>
+ </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+  <%= yield %>
+</div>
+<%#= render 'layouts/footer' %>
+</body>
 </html>
